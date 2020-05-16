@@ -17,7 +17,6 @@ use pocketmine\Server;
  */
 abstract class Reaction
 {
-
     /**
      * Playerからリアクションの表示位置を計算して返す
      *
