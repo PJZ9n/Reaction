@@ -4,6 +4,7 @@ namespace xtakumatutix\reaction\Form;
 use pocketmine\form\Form;
 use pocketmine\Player;
 use xtakumatutix\reaction\Reaction\Good;
+use xtakumatutix\reaction\Reaction\Reaction;
 
 class ActionForm implements Form
 {
@@ -15,7 +16,10 @@ class ActionForm implements Form
 
         switch ($data) {
             case 0:
-            Good::particle($player);
+                $pos = Reaction::calculatePosition($player);//地点をプレイヤーの場所から計算する
+                $good = new Good($pos);//Goodクラスを作成
+                $good->show();//表示させる
+                break;
         }
     }
 
