@@ -3,6 +3,7 @@ namespace xtakumatutix\reaction\Form;
 
 use pocketmine\form\Form;
 use pocketmine\Player;
+use xtakumatutix\reaction\Reaction\Excited;
 use xtakumatutix\reaction\Reaction\Good;
 use xtakumatutix\reaction\Reaction\Reaction;
 
@@ -20,6 +21,10 @@ class ActionForm implements Form
                 $good = new Good($pos);//Goodクラスを作成
                 $good->show();//表示させる
                 break;
+            case 1:
+                $excited = new Excited(Reaction::calculatePosition($player));
+                $excited->show();
+                break;
         }
     }
 
@@ -32,6 +37,9 @@ class ActionForm implements Form
             'buttons' => [
                 [
                     'text' => 'Good',
+                ],
+                [
+                    'text' => 'Excited',
                 ]
             ],
         ];
