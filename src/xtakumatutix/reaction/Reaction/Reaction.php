@@ -63,4 +63,52 @@ abstract class Reaction
         /** @var Plugin $plugin */
         $plugin->getScheduler()->scheduleDelayedTask($task, 20 * 5);//5秒後に実行
     }
+
+    /**
+     * @return Position
+     */
+    public function getPos(): Position
+    {
+        return $this->pos;
+    }
+
+    /**
+     * @param Position $pos
+     */
+    public function setPos(Position $pos): void
+    {
+        $this->pos = $pos;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param string $text
+     */
+    public function setText(string $text): void
+    {
+        $this->text = $text;
+    }
 }
